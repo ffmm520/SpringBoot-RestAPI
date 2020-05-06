@@ -3,6 +3,7 @@ package club.mrhu.startspringboot.controller;
 import club.mrhu.startspringboot.config.WxMpParam;
 import club.mrhu.startspringboot.config.WxMpParam2;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ public class WxController {
     @Autowired
     WxMpParam2 wxMpParam2;
 
+    @ApiOperation(value = "获取微信配置1")
     @GetMapping("/wx1")
     public Map<String, String> wxConfig() {
         String appid = wxMpParam.getAppid();
@@ -29,6 +31,7 @@ public class WxController {
         return resultmap;
     }
 
+    @ApiOperation(value = "获取微信配置2")
     @GetMapping("/wx2")
     public Map<String, String> wxConfig2() {
         String appid = wxMpParam2.getAppid();
