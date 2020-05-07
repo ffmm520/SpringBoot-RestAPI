@@ -35,8 +35,8 @@ public class MyController {
 
     @ApiOperation(value = "根据id修改商品")
     @PutMapping("/list/{id}")
-    public GoodsDo editGoods(@PathVariable("id") Long id) {
-        return goodsService.editGoods(id);
+    public GoodsDo editGoods(@PathVariable("id") Long id, @RequestBody GoodsDo goods) {
+        return goodsService.editGoods(id, goods);
     }
 
     @ApiOperation(value = "根据id删除商品")
